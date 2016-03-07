@@ -276,4 +276,19 @@ class OpenFireRestApi
         $endpoint = '/groups/'.$name;
         return $this->doRequest('put', $endpoint, compact('name','description'));
     }
+		
+		/**
+		* Update a chatroom's settings
+		*
+		*	@param 	string 	$roomName The name of the room to update
+		* @param	array 	$settings Associative array containing the settings to apply to the room
+		*/
+		public function updateRoom($roomName, array $settings)
+		{
+			$settings['roomName'] = $roomName;
+			
+			$ep = '/chatrooms/' . $settings['roomName'];
+			
+			return $this->doRequest('put', $ep, $settings);
+		}
 }
