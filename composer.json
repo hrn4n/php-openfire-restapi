@@ -1,5 +1,5 @@
 {
-    "name": "gidkom/php-openfire-restapi",
+    "name": "hrn4n/php-openfire-restapi",
     "description": "Manage Open fire server using Rest Api",
     "version": "1.0.0",
     "keywords": ["openfire", "xmpp", "chat"],
@@ -9,11 +9,15 @@
         {
             "name": "Gideon Kombian",
             "email": "yoroumah@gmail.com"
+        },
+        {
+          "name": "Hernán Ruíz",
+          "email": "hernan@null.net"
         }
     ],
     "support": {
-        "email": "yoroumah@gmail.com",
-        "issues": "https://github.com/gidkom/php-openfire-restapi/issues"
+        "email": "hernan@null.net",
+        "issues": "https://github.com/hrn4n/php-openfire-restapi/issues"
     },
     "require": {
         "php": ">=5.4.0",
