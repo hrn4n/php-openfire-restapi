@@ -7,10 +7,10 @@ use GuzzleHttp\Client;
 class OpenFireRestApi
 {
     public $host		= 'localhost';
-	public $port		= '9090';
-	public $plugin		= '/plugins/restapi/v1';
-	public $secret		= 'SuperSecret';
-	public $useSSL		= false;
+		public $port		= '9090';
+		public $plugin		= '/plugins/restapi/v1';
+		public $secret		= 'SuperSecret';
+		public $useSSL		= false;
     protected $params   = [];
     public $client;
 
