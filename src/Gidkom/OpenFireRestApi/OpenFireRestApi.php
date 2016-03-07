@@ -11,7 +11,7 @@ class OpenFireRestApi
 	public $plugin		= '/plugins/restapi/v1';
 	public $secret		= 'SuperSecret';
 	public $useSSL		= false;
-    protected $params   = array();
+    protected $params   = [];
     public $client;
 
     /**
@@ -33,7 +33,7 @@ class OpenFireRestApi
      * @return  array|false                     Array with data or error, or False when something went fully wrong
      */
     
-    private function doRequest($type, $endpoint, $params=array())
+    private function doRequest($type, $endpoint, $params=[])
     {
     	$base = ($this->useSSL) ? "https" : "http";
     	$url = $base . "://" . $this->host . ":" .$this->port.$this->plugin.$endpoint;
