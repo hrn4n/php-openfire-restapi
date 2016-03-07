@@ -23,7 +23,7 @@ The easiest way to install is via [composer](http://getcomposer.org/). Create th
 ```json
 {
     "require": {
-        "gidkom/php-openfire-restapi": "dev-master"
+        "hrn4n/php-openfire-restapi": "dev-master"
     }
 }
 ```
@@ -103,6 +103,3 @@ $api->updateGroup($group_name, $description);
 $api->deleteGroup($group_name);
 
 ```
-
-## CONTACT
-- gidkom <yoroumah@gmail.com>
