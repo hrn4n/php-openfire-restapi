@@ -8,20 +8,23 @@ class OpenFireRestApi
 {
     public $host		= 'localhost';
 		public $port		= '9090';
-		public $plugin		= '/plugins/restapi/v1';
 		public $secret		= 'SuperSecret';
 		public $useSSL		= false;
-    protected $params   = [];
     public $client;
+		
+		protected $params   = [];
+		protected $plugin;
 
     /**
      * Class Contructor
      *
+		 * @param	string	$host					Name of the host to connect to
+		 * @param string	$pluginPath		Path to where the plugin is located
      */
-    public function __construct()
+    public function __construct($host, $pluginPath = '/plugins/restapi/v1')
     {
         $this->client = new Client();
-       
+        $this->plugin = $pluginPath;
     }
 
     /**
