@@ -24,6 +24,7 @@ class OpenFireRestApi
     public function __construct($host, $pluginPath = '/plugins/restapi/v1')
     {
         $this->client = new Client();
+        $this->host = $host;
         $this->plugin = $pluginPath;
     }
 
