@@ -24,7 +24,7 @@ class OpenFireRestApi
     public function __construct($host, $pluginPath = '/plugins/restapi/v1')
     {
         $this->client = new Client();
-        $this->host = $host;
+				$this->host = $host;
         $this->plugin = $pluginPath;
     }
 
@@ -70,7 +70,7 @@ class OpenFireRestApi
         }
         
         if ($result->getStatusCode() == 200 || $result->getStatusCode() == 201) {
-            return array('status'=>true, 'message'=>$result->getBody());
+					return json_decode($result->getBody());
         }
         return array('status'=>false, 'message'=>$result->getBody());
     	
@@ -291,5 +291,37 @@ class OpenFireRestApi
 			$ep = '/chatrooms/' . $settings['roomName'];
 			
 			return $this->doRequest('put', $ep, $settings);
+		}
+		
+		/**
+		* Creates a chatroom
+		* @param  array $roomSettings Settings of the room
+		*/
+		public function createRoom(array $roomSettings)
+		{
+			$ep = '/chatrooms/';
+			
+			return $this->doRequest('post', $ep, $roomSettings);
+		}
+		
+		/**
+		* @param string $roomName 
+		*/
+		public function getRoomInfo($roomName)
+		{
+			$ep = '/chatrooms/' . $roomName;
+			
+			return $this->doRequest('get', $ep);
+		}
+		
+		/**
+		* Deletes a chatroom
+		* @param	string	$roomName Name of the room to delete
+		*/
+		public function deleteRoom($roomName)
+		{
+			$ep = '/chatrooms/' . $roomName;
+			
+			return $this->doRequest('delete', $ep);
 		}
 }
